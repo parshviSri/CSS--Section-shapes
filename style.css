@@ -2,6 +2,8 @@
 *::before,
 *::after {
     box-sizing: border-box;
+    padding: 0;
+    font: inherit;
 }
 :root{
     --body-bg: hsl(0 ,0%, 15%);
@@ -15,9 +17,49 @@ body{
     color: white;
     font-family: system-ui;
     font-size: 2.5 rem;
-    line-height: 1.5;
-
+    line-height: 1.5 rem;
+    padding:20 rem 0;
     margin:0;
+}
+img{
+    max-width: 100%;
+    display: block;
+}
+.person{
+    position : relative;
+    max-width: 15rem;
+    margin-left: 10rem;
+    /* margin-inline : auto; */
+
+}
+.person_circle{
+    position: absolute;
+    inset:auto 0 0;
+    aspect-ratio: 1/1;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-inline: auto;
+}
+.person_container{
+    aspect-ratio: 1/1.5;
+    display: grid;
+    align-items: end;
+    border-radius: 0 0 100vw 100vw;
+    overflow: hidden;
+    transition: transform 250ms ease;
+}
+.person_container:hover{
+    transform: scale(1.1)
+}
+.person_img{
+    position: relative;
+    z-index: 2;
+    transform: scale(1.1);
+    transition : transform calc(250ms * 1.2) ease;
+}
+.person_container:hover .person_img{
+    transform: scale(1.1) translateY(-1.5rem);
 }
 .wrapper{
     max-width: 50rem;
