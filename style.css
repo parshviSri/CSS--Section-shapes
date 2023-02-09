@@ -6,20 +6,27 @@
     font: inherit;
 }
 :root{
-    --body-bg: hsl(0 ,0%, 15%);
+    --clr-body-bg: hsl(0 0% 90%);
+  --clr-card-bg: hsl(0 0% 100%);
+  --clr-text: hsl(0 0% 15%);
+  --clr-heading: hsl(0 0% 25%);
 }
 
 html{
     color-scheme :dark light;
 }
 body{
-    background : var(--body-bg);
-    color: white;
+     background: var(--clr-body-bg);
+     color: var(--clr-text);
     font-family: system-ui;
     font-size: 2.5 rem;
     line-height: 1.5 rem;
     padding:20 rem 0;
     margin:0;
+}
+h1,h2,h3{
+    color: var(--clr-heading);
+    line-height:1.1;
 }
 img{
     max-width: 100%;
@@ -141,4 +148,35 @@ section{
   -webkit-mask: var(--mask);
           mask: var(--mask);
 
+}
+.visually-hidden{
+    
+    clip: rect(0,0,0,0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+.color-picker > fieldset{
+    border: 0;
+    display: flex;
+    gap: 2rem;
+    background: #fff;
+    padding: 1rem 3rem;
+    margin-inline: auto;
+    width: fit-content;
+    border-radius: 0 0 1rem 1rem;
+}
+.color-picker input[type="radio"]{
+appearance: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  outline: 3px solid var(--radio-color, currentColor);
+  outline-offset: 3px;
+  border-radius: 50%;
+}
+.color-picker input[type="radio"]#pink{
+    --radio-color: pink;
 }
