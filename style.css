@@ -6,7 +6,7 @@
     font: inherit;
 }
 :root{
-    --clr-body-bg: hsl(0 0% 90%);
+  --clr-body-bg: hsl(0 0% 90%);
   --clr-card-bg: hsl(0 0% 100%);
   --clr-text: hsl(0 0% 15%);
   --clr-heading: hsl(0 0% 25%);
@@ -16,8 +16,8 @@ html{
     color-scheme :dark light;
 }
 body{
-     background: var(--clr-body-bg);
-     color: var(--clr-text);
+    background: var(--clr-body-bg);
+    color: var(--clr-text);
     font-family: system-ui;
     font-size: 2.5 rem;
     line-height: 1.5 rem;
@@ -93,6 +93,7 @@ section{
     );
     position: relative;
     isolation: isolate;
+    color: var(--clr-text)
 }
 .diagonal::after{
     content:'';
@@ -103,7 +104,7 @@ section{
     transform: skewY(var(--skew-angle));
 }
 .spikes{
-    --spikes-color: var(--body-bg);
+    --spikes-color: var(--clr-body-bg);
     --spikes-width: 50px;
     --spikes-height: 10px;
     position: relative;
@@ -177,6 +178,46 @@ appearance: none;
   outline-offset: 3px;
   border-radius: 50%;
 }
+.color-picker input[type="radio"]:checked{
+    background-color: var(--radio-color)
+}
 .color-picker input[type="radio"]#pink{
     --radio-color: pink;
+}
+.color-picker input[type="radio"]#green{
+    --radio-color: green;
+}
+.color-picker input[type="radio"]#blue{
+    --radio-color: blue;
+}
+.color-picker input[type="radio"]#light{
+    --radio-color: gray;
+}
+.color-picker input[type="radio"]#dark{
+    --radio-color: #232323;
+}
+
+:root:has(#pink:checked){
+  --clr-body-bg: hsl(310 50% 90%);
+  --clr-card-bg: hsl(310 50% 100%);
+  --clr-text: hsl(310 50% 15%);
+  --clr-heading: hsl(310 50% 25%);
+}
+:root:has(#blue:checked){
+  --clr-body-bg: hsl(209 50% 90%);
+  --clr-card-bg: hsl(209 50% 100%);
+  --clr-text: hsl(209 50% 15%);
+  --clr-heading: hsl(209 50% 25%);
+}
+:root:has(#green:checked){
+  --clr-body-bg: hsl(109 50% 90%);
+  --clr-card-bg: hsl(109 50% 100%);
+  --clr-text: hsl(109 50% 15%);
+  --clr-heading: hsl(109 50% 25%);
+}
+:root:has(#dark:checked){
+  --clr-body-bg: hsl(209 50% 10%);
+  --clr-card-bg: hsl(209 50% 5%);
+  --clr-text: hsl(209 50% 90%);
+  --clr-heading: hsl(209 50% 80%);
 }
