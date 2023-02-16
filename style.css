@@ -127,9 +127,9 @@ section{
     width: 100%;
     height: var(--spikes-height);
     background: var(--spikes-color);
-    -webkit-mask-image:url('triangle.svg');
+    -webkit-mask-image:url('./assets/triangle.svg');
     -webkit-mask-size: var(--spikes-width) var(--spikes-height);
-    webkit-mask-image:url('triangle.svg');
+    webkit-mask-image:url('./assets/triangle.svg');
     webkit-mask-size: var(--spikes-width) var(--spikes-height);
 }
 .spikes::before{

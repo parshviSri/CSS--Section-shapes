@@ -1,0 +1,69 @@
+:root{
+    --pink : hsl(338,70%,55%);
+    --teal : hsl(183,70%,62%);
+    --white: hsl(334,7%,95%);
+}
+body{
+    background: hsl(224,32%,12%);
+    background-image: conic-gradient(
+        from 0deg at 50% 50%,
+        blue,
+        purple,
+        purple,
+        blue
+    );
+    background-blend-mode:multiply;
+    min-block-size: 100dvh;
+    display: grid;
+    place-items: center;
+}
+.blog-post main{
+    display: flex;
+    margin-inline: 2rem;
+}
+.block-background{
+    --undefined: var(--white);
+    font-size: 3rem;
+    font-weight:bold;
+    width: 30%;
+    overflow-wrap: break-word;
+    color: var(--undefined);
+    background: hsl(222, 45%, 7%);
+    padding: 2rem;
+    border-radius: 1rem;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: perspective(5000px)
+    rotateY(var(--rotateY)) rotateX(var(--rotateX));
+}
+.block-background > *{
+    text-shadow: 0 0 0.5em currentColor;
+}
+.block-background::before,
+.block-background::after{
+    content:"";
+    position: absolute;
+    border-radius: inherit;
+    
+}
+.block-background::before{
+    inset: 0.75rem;
+    border-radius: inherit;
+    background: black;
+    z-index: -1;
+    transform: translateZ(-50px);
+    filter: blur(15px);
+    opacity:0.5;
+}
+.block-background::after{
+    z-index: -2;
+    inset: -1rem;
+    background: linear-gradient(-45deg, red,blue);
+    transform: translateZ(-50px);   
+}
+.blog-heading{
+    color: var(--teal);
+    font-size: 2.5rem;
+    text-shadow: 0 0 0.5rem currentColor;
+    padding: 2rem;
+}
