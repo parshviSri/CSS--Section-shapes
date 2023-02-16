@@ -19,7 +19,8 @@ body{
 }
 .blog-post main{
     display: flex;
-    margin-inline: 2rem;
+    flex-wrap:wrap;
+    justify-content:center;
 }
 .block-background{
     --undefined: var(--white);
@@ -30,6 +31,7 @@ body{
     color: var(--undefined);
     background: hsl(222, 45%, 7%);
     padding: 2rem;
+     margin: 2rem;
     border-radius: 1rem;
     position: relative;
     transform-style: preserve-3d;
